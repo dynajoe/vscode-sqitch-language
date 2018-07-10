@@ -1,0 +1,8 @@
+%syntax-version=1.0.0
+%project=phoenix
+%uri=https://api.smrxt.net/
+
+device/schema/alter/device_reconcile 2018-06-21T14:12:26Z Joe Andaverde <joe.andaverde@smrxt.com> # Device schema reconciliation.
+device/schema/latest_sensor_value [device/schema/latest_sensor_value@v1.0.0] 2018-06-22T14:22:13Z Joe Andaverde <joe.andaverde@smrxt.com> # rework
+device/functions/write_sensor_values [device/functions/write_sensor_values@v1.0.0] 2018-06-22T03:53:57Z Joe Andaverde <joe.andaverde@smrxt.com> # rework
+device/schema/alter/device_to_history_table 2018-06-23T02:24:58Z Joe Andaverde <joe.andaverde@smrxt.com> # device to history table
