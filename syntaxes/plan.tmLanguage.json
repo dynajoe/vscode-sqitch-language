@@ -1,22 +1,54 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Sqitch",
-	"patterns": [
-		{
-			"include": "#migrations"
-		}
-	],
-	"repository": {
-		"migrations": {
-			"patterns": [{
-				"match": "^([\\w|/]+)( \\[[\\w|/]+@[^\\]]+\\])? (\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z)",
-				"captures": {
-					"1": { "name": "support.function" },
-					"2": { "name": "support.variable" },
-					"3": { "name": "markup.bold" }
-				}
-			}]
-		}
-	},
-	"scopeName": "plan"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Sqitch",
+  "patterns": [
+    {
+      "include": "#migrations"
+    }
+  ],
+  "repository": {
+    "migrations": {
+      "patterns": [
+        {
+          "match": "^([\\w|/]+)",
+          "captures": {
+            "1": { "name": "support.function" }
+          }
+        },
+        {
+          "match": "(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z)",
+          "captures": {
+            "1": { "name": "markup.bold" }
+          }
+        },
+        {
+          "match": "(^@[^\\s]+)",
+          "captures": {
+            "1": { "name": "keyword" }
+          }
+        },
+        {
+          "match": "(#.*)",
+          "captures": {
+            "1": { "name": "comment" }
+          }
+        },
+        {
+          "match": "(^%[^=]+)=(.*)",
+          "captures": {
+            "1": { "name": "markup.heading" },
+            "2": { "name": "entity.name.type" }
+          }
+        },
+        {
+          "match": "\\[([^@]+)(@[^\\]]+)]",
+          "captures": {
+            "1": { "name": "support.function" },
+            "2": { "name": "keyword" }
+          }
+        }
+      ]
+    }
+  },
+  "scopeName": "plan"
 }
