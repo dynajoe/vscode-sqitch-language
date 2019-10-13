@@ -1,26 +1,35 @@
 {
-    "name": "sqitch-plan",
-    "displayName": "Sqitch Plan Language",
-    "description": "Sqitch Plan Language",
-    "version": "0.0.1",
-    "publisher": "joeandaverde",
-    "engines": {
-        "vscode": "^1.25.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "sqitch-plan",
+  "displayName": "Sqitch Plan Language",
+  "description": "Sqitch plan highlighting",
+  "version": "0.0.2",
+  "publisher": "joeandaverde",
+  "engines": {
+    "vscode": "^1.25.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "plan",
+        "aliases": [
+          "Sqitch",
+          "plan"
+        ],
+        "extensions": [
+          ".plan"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "plan",
-            "aliases": ["Sqitch", "plan"],
-            "extensions": [".plan"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "plan",
-            "scopeName": "plan",
-            "path": "./syntaxes/plan.tmLanguage.json"
-        }]
-    }
+    "grammars": [
+      {
+        "language": "plan",
+        "scopeName": "plan",
+        "path": "./syntaxes/plan.tmLanguage.json"
+      }
+    ]
+  }
 }
